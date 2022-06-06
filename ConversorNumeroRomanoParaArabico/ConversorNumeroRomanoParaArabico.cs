@@ -44,7 +44,6 @@ namespace ConversorNumero.Dominio
 
         public int ConverterRomanosParaNumerico(string numeroRomano)
         {
-            string[] numerosRomanosArray = numeroRomano.Split("");
             int numeroConvertido = 0;
 
             if (numeroRomano.StartsWith("X"))
@@ -84,34 +83,33 @@ namespace ConversorNumero.Dominio
             if (numeroRomano.StartsWith("XXX"))
             {
                 numeroRomanoUnidade = numeroRomano.Substring(3);
-                numeroConvertido = 30;
+                numeroConvertido = numeroArabicos["XXX"];
             }
 
             else if (numeroRomano.StartsWith("XX"))
             {
                 numeroRomanoUnidade = numeroRomano.Substring(2);
-                numeroConvertido = 20;
+                numeroConvertido = numeroArabicos["XX"];
             }
 
             else if (numeroRomano.StartsWith("XL"))
             {
-
                 numeroRomanoUnidade = numeroRomano.Substring(2);
-                numeroConvertido = 40;
+                numeroConvertido = numeroArabicos["XL"];
             }
 
             else if (numeroRomano.StartsWith("XC"))
             {
 
                 numeroRomanoUnidade = numeroRomano.Substring(2);
-                numeroConvertido = 90;
+                numeroConvertido = numeroArabicos["XC"];
             }
 
             else if (numeroRomano.StartsWith("X"))
             {
 
                 numeroRomanoUnidade = numeroRomano.Substring(1);
-                numeroConvertido = 10;
+                numeroConvertido = numeroArabicos["X"];
             }
 
             numeroConvertido += numeroArabicos[numeroRomanoUnidade];
@@ -126,25 +124,25 @@ namespace ConversorNumero.Dominio
             if (numeroRomano.StartsWith("LXXX"))
             {
                 numeroRomanoUnidade = numeroRomano.Substring(4);
-                numeroConvertido = 80;
+                numeroConvertido = numeroArabicos["LXXX"];
             }
 
             else if (numeroRomano.StartsWith("LXX"))
             {
                 numeroRomanoUnidade = numeroRomano.Substring(3);
-                numeroConvertido = 70;
+                numeroConvertido = numeroArabicos["LXX"];
             }
 
             else if (numeroRomano.StartsWith("LX"))
             {
                 numeroRomanoUnidade = numeroRomano.Substring(2);
-                numeroConvertido = 60;
+                numeroConvertido = numeroArabicos["LX"];
             }
 
             else if (numeroRomano.StartsWith("L"))
             {
                 numeroRomanoUnidade = numeroRomano.Substring(1);
-                numeroConvertido = 50;
+                numeroConvertido = numeroArabicos["L"];
             }
 
             numeroConvertido += numeroArabicos[numeroRomanoUnidade];
@@ -158,31 +156,31 @@ namespace ConversorNumero.Dominio
             if (numeroRomano.StartsWith("CCC"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(3);
-                numeroConvertido = 300;
+                numeroConvertido = numeroArabicos["CCC"];
             }
 
             else if (numeroRomano.StartsWith("CC"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(2);
-                numeroConvertido = 200;
+                numeroConvertido = numeroArabicos["CC"];
             }
 
             else if (numeroRomano.StartsWith("CD"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(2);
-                numeroConvertido = 400;
+                numeroConvertido = numeroArabicos["CD"];
             }
 
             else if (numeroRomano.StartsWith("CM"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(2);
-                numeroConvertido = 900;
+                numeroConvertido = numeroArabicos["CM"];
             }
 
             else if (numeroRomano.StartsWith("C"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(1);
-                numeroConvertido = 100;
+                numeroConvertido = numeroArabicos["C"];
             }
             numeroConvertido += ConverterRomanosParaNumerico(numeroRomanoDecimal);
             return numeroConvertido;
@@ -195,25 +193,25 @@ namespace ConversorNumero.Dominio
             if (numeroRomano.StartsWith("DCCC"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(4);
-                numeroConvertido = 800;
+                numeroConvertido = numeroArabicos["DCCC"];
             }
 
             else if (numeroRomano.StartsWith("DCC"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(3);
-                numeroConvertido = 700;
+                numeroConvertido = numeroArabicos["DCC"];
             }
 
             else if (numeroRomano.StartsWith("DC"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(2);
-                numeroConvertido = 600;
+                numeroConvertido = numeroArabicos["DC"];
             }
 
             else if (numeroRomano.StartsWith("D"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(1);
-                numeroConvertido = 500;
+                numeroConvertido = numeroArabicos["D"];
             }
 
             numeroConvertido += ConverterRomanosParaNumerico(numeroRomanoDecimal);
@@ -228,19 +226,19 @@ namespace ConversorNumero.Dominio
             if (numeroRomano.StartsWith("MMM"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(3);
-                numeroConvertido = 3000;
+                numeroConvertido = numeroArabicos["MMM"];
             }
 
             else if (numeroRomano.StartsWith("MM"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(2);
-                numeroConvertido = 2000;
+                numeroConvertido = numeroArabicos["MM"];
             }
 
             else if (numeroRomano.StartsWith("M"))
             {
                 numeroRomanoDecimal = numeroRomano.Substring(1);
-                numeroConvertido = 1000;
+                numeroConvertido = numeroArabicos["M"];
             }
 
             numeroConvertido += ConverterRomanosParaNumerico(numeroRomanoDecimal);
